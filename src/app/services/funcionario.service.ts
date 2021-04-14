@@ -12,7 +12,7 @@ export class FuncionarioService {
 
   constructor(private http: HttpClient) { }
 
-  public editarFuncionario(funcionario: Funcionario): Observable<Funcionario> {
+  /*public editarFuncionario(funcionario: Funcionario): Observable<Funcionario> {
     return this.http.put<Funcionario>(`${this.apiUrl}/funcionarios`, funcionario);
   }
   public postFuncionario(funcionario: Funcionario): Observable<Funcionario> {
@@ -39,5 +39,5 @@ export class FuncionarioService {
   }
   public buscarFuncionarios(): Observable<Funcionario[]> {
     return this.http.get<Funcionario[]>(`${this.apiUrl}/funcionarios`);
-  }
+  }*/
 }

@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
+import { timeoutWith } from 'rxjs/operators';
 import { CartService } from 'src/app/services/cart.service';
 import { ProdutoService } from 'src/app/services/produto.service';
 import { Produto } from '../../produto/models/Produto';
@@ -24,22 +25,17 @@ export class DetalhesProdutoComponent implements OnInit {
   constructor(private cartService: CartService, private config: NgbRatingConfig, private sanitizer: DomSanitizer, private router: Router, private route: ActivatedRoute, private fb: FormBuilder,
     private produtoService: ProdutoService) {
     this.config.max = 5;
-    this.formProduto = this.createForm(this.produto);
     this.route.params.subscribe(parametros => {
       this.id = parametros['id'];
     });
-    this.produtoService.getProdutoById(this.id).subscribe(response => {
-      this.produto = response
+      this.produto.nome='Jogo de Cama Solteiro Infantil Karsten 180 Fios Percal 100% Algodão Missi'
+      this.produto.descricao='Sobre lençol 180 x 240 cm, Lençol de elástico 100 x 200 x 35 cm, Fronha 50 x 70 cm';
+      this.produto.preco=214.9;
+      this.produto.status=1;
+      this.produto.qtdEstrelas=3;
+      this.produto.categoria='Cama'
       this.formProduto = this.createForm(this.produto);
-      this.currentRate=<number> this.produto.qtdEstrelas;
-    })
 
-    this.produtoService.getImagensProduto(this.id).subscribe(response => {
-      this.imagens = response;
-      response.forEach(element =>
-        this.imageToShow.push((this.sanitizer.bypassSecurityTrustResourceUrl(`data:image/png;base64, ${element.imagem}`)))
-      )
-    })
 
   }
 

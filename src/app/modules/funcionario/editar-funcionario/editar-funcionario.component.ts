@@ -32,10 +32,7 @@ export class EditarFuncionarioComponent implements OnInit {
       this.id = parametros['id'];
     });
     this.formFuncionario = this.createFormFuncionario(this.funcionario);
-    funcionarioService.buscarFuncionarioPorId(this.id).subscribe(res => {
-      this.funcionario = res;
-      this.formFuncionario = this.createFormFuncionario(this.funcionario);
-    })
+
   }
 
   ngOnInit() {
@@ -89,7 +86,7 @@ export class EditarFuncionarioComponent implements OnInit {
       this.funcionario.usuario!.active = this.formFuncionario.value.status;
       this.funcionario.cargo = this.formFuncionario.value.cargo;
 
-      this.funcionarioService.editarFuncionario(this.funcionario).subscribe(res => {
+     /* this.funcionarioService.editarFuncionario(this.funcionario).subscribe(res => {
         this.toastr.success("Funcionário editado com sucesso", "OK", {
           timeOut: 3000, positionClass: 'toast-top-center',
         });
@@ -99,7 +96,7 @@ export class EditarFuncionarioComponent implements OnInit {
         });
       })
     } else {
-      this.formValid = false;
+      this.formValid = false;*/
     }
   }
   public backPage() {
@@ -107,7 +104,7 @@ export class EditarFuncionarioComponent implements OnInit {
   }
 
   alterarSenha() {
-    const dialogRef = this.dialog.open(ModalAlterarSenhaComponent, {
+    /*const dialogRef = this.dialog.open(ModalAlterarSenhaComponent, {
       panelClass: 'custom-modais', backdropClass: 'blur',
       data: {
         funcionario: this.funcionario
@@ -129,27 +126,9 @@ export class EditarFuncionarioComponent implements OnInit {
       }
     }, err => {
       console.log(err);
-    });
+    });*/
   }
   public buscarCep() {
-    if (!this.f.cep.errors) {
-      this.buscarCepService.buscar(this.formFuncionario.value.cep).subscribe(res => {
-        if (!res.erro) {
-          this.formFuncionario.value.logradouro = res.logradouro;
-          this.formFuncionario.value.uf = res.uf;
-          this.formFuncionario.value.localidade = res.localidade;
-          this.cepValido = true;
-        } else {
-          this.toastr.error("CEP não encontrado", "Erro", {
-            timeOut: 3000, positionClass: 'toast-top-center',
-          });
-        }
 
-      })
-    } else {
-      this.toastr.error("CEP inválido ", "Erro", {
-        timeOut: 3000, positionClass: 'toast-top-center',
-      });
-    }
   }
 }

@@ -26,7 +26,7 @@ export class FuncionarioComponent implements OnInit {
   constructor(private roleGuardService: RoleGuardService, private spinner: NgxSpinnerService,private funcionarioService: FuncionarioService, private router: Router) {
     this.userRole=this.roleGuardService.getUserRole();
     this.isAdmin=this.userRole=='ROLE_ADMIN'
-    this.searchFilter.pipe(
+    /*this.searchFilter.pipe(
       debounceTime(1000),
       distinctUntilChanged())
       .subscribe(search => {
@@ -36,26 +36,25 @@ export class FuncionarioComponent implements OnInit {
               this.funcionarios = response;
             }
           });
-      });
+      });*/
    }
 
   ngOnInit() {
      /** spinner starts on init */
-     this.spinner.show();
 
-    this.funcionarioService.buscarFuncionarios().subscribe(response=>{
-      this.funcionarios=response;
-    })
+    //this.funcionarioService.buscarFuncionarios().subscribe(response=>{
+    //  this.funcionarios=response;
+  //  })
   }
   public habilitarFuncionario(f: Funcionario,) {
-    this.funcionarioService.editarFuncionario(f).subscribe((response: any) => {
-    });
+   // this.funcionarioService.editarFuncionario(f).subscribe((response: any) => {
+  //  });
   }
   public editarFuncionario(f: Funcionario){
-    this.router.navigate(['/funcionarios/editar', f.id]);
+  //  this.router.navigate(['/funcionarios/editar', f.id]);
   }
   public adicionarFuncionario(){
-    this.router.navigate(['/funcionarios/adicionar']);
+   // this.router.navigate(['/funcionarios/adicionar']);
   }
 
 }

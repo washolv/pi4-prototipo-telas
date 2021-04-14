@@ -28,11 +28,11 @@ import localePt from '@angular/common/locales/pt';
 
 const routes: Routes = [
   { path: '', component: ProdutoComponent },
-  { path: 'editar/:id', component: EditarProdutoComponent,canActivate: [AdminGuard] },
-  { path: 'adicionar', component: AdicionarProdutoComponent, canActivate: [AdminGuard],},
+  { path: 'editar/:id', component: EditarProdutoComponent,/*canActivate: [AdminGuard]*/ },
+  { path: 'adicionar', component: AdicionarProdutoComponent, /*canActivate: [AdminGuard],*/},
   { path: 'visualizar/:id', component: VisualizarProdutoComponent},
-  { path: 'adicionar/imagens', component: AdicionarImagensProdutoComponent, canActivate: [AdminGuard]},
-  { path: 'editar/imagens/:id', component: EditarImagensProdutoComponent, canActivate: [AdminGuard]}
+  { path: 'adicionar/imagens', component: AdicionarImagensProdutoComponent, /*canActivate: [AdminGuard]*/},
+  { path: 'editar/imagens/:id', component: EditarImagensProdutoComponent,/* canActivate: [AdminGuard]*/}
 ];
 registerLocaleData(localePt, 'pt');
 

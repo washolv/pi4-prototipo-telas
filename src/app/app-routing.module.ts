@@ -20,28 +20,28 @@ const routes: Routes = [
   {
     path: 'produtos', component: MainNavComponent,
     loadChildren: () => import('./modules/produto/produto.module').then(m => m.ProdutoModule),
-    canActivate: [AuthGuard],
+   /* canActivate: [AuthGuard],
     data: {
       expectedRole: ['ROLE_ADMIN', 'ROLE_ESTOQUISTA']
-    }
+    }*/
   },
   {
     path: 'clientes', component: MainNavComponent,
     loadChildren: () => import('./modules/cliente/cliente.module').then(m => m.ClienteModule),
-    canActivate: [AdminGuard],
+    //canActivate: [AdminGuard],
   },
   {
     path: 'configuracoes', component: MainNavComponent,
     loadChildren: () => import('./modules/configuracao/configuracao.module').then(m => m.ConfiguracaoModule),
-    canActivate:[ClienteGuard]
+   // canActivate:[ClienteGuard]
   },
   {
     path: 'funcionarios', component: MainNavComponent,
     loadChildren: () => import('./modules/funcionario/funcionario.module').then(m => m.FuncionarioModule),
-    canActivate: [AuthGuard],
+   /* canActivate: [AuthGuard],
     data: {
       expectedRole: ['ROLE_ADMIN', 'ROLE_ESTOQUISTA']
-    }
+    }*/
   },
   {
     path: 'carrinho', component: MainNavComponent,

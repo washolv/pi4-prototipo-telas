@@ -2,7 +2,7 @@ import { SafeResourceUrl } from "@angular/platform-browser";
 
 export class Produto {
   id?: number;
-  nome?: number;
+  nome?: string;
   descricao?: string;
   preco?: number;
   quantidadeEstoque?: number;

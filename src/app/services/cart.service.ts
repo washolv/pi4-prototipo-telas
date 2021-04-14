@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { environment } from 'src/environments/environment';
-import { Produto } from '../modules/produto/models/Produto';
+import { Imagem, Produto } from '../modules/produto/models/Produto';
 import { ProdutoService } from './produto.service';
 
 @Injectable({
@@ -12,10 +12,10 @@ export class CartService {
 
   apiUrl = environment.baseAPIUrl;
 
-  constructor(private http: HttpClient, private produtoService: ProdutoService, private sanitizer: DomSanitizer) { }
+  constructor(private domSanitizer: DomSanitizer,private http: HttpClient, private produtoService: ProdutoService, private sanitizer: DomSanitizer) { }
 
   public buscarProdutos() {
-    let produtosCarrinhoJson = localStorage.getItem('carrinho');
+    /*let produtosCarrinhoJson = localStorage.getItem('carrinho');
     let produtosCarrinho: Produto[] = new Array();
     if (produtosCarrinhoJson) {
       let listaId: number[] = JSON.parse(produtosCarrinhoJson);
@@ -32,38 +32,40 @@ export class CartService {
         })
       });
     }
-    return produtosCarrinho;
+    return produtosCarrinho;*/
+
   }
   public adicionarProduto(produto: Produto) {
-    let produtosCarrinhoJson = localStorage.getItem('carrinho');
-    if (produtosCarrinhoJson) {
-      console.log(produtosCarrinhoJson)
+    /* let produtosCarrinhoJson = localStorage.getItem('carrinho');
+     if (produtosCarrinhoJson) {
+       console.log(produtosCarrinhoJson)
 
-      let produtosCarrinho = JSON.parse(produtosCarrinhoJson);
-      produtosCarrinho.push(produto.id)
+       let produtosCarrinho = JSON.parse(produtosCarrinhoJson);
+       produtosCarrinho.push(produto.id)
 
-      produtosCarrinhoJson = JSON.stringify(produtosCarrinho);
+       produtosCarrinhoJson = JSON.stringify(produtosCarrinho);
 
-      localStorage.setItem('carrinho', produtosCarrinhoJson!);
-    } else {
-      let produtoCarrinho: number[] = new Array();
-      produtoCarrinho.push(produto.id!)
-      console.log(produtoCarrinho)
-      localStorage.setItem('carrinho', JSON.stringify(produtoCarrinho));
-    }
+       localStorage.setItem('carrinho', produtosCarrinhoJson!);
+     } else {
+       let produtoCarrinho: number[] = new Array();
+       produtoCarrinho.push(produto.id!)
+       console.log(produtoCarrinho)
+       localStorage.setItem('carrinho', JSON.stringify(produtoCarrinho));
+     }*/
   }
   public qtdCarrinho() {
-    let produtosCarrinhoJson = localStorage.getItem('carrinho');
+    return 3;
+    /*let produtosCarrinhoJson = localStorage.getItem('carrinho');
     if (produtosCarrinhoJson) {
       let produtosCarrinho = JSON.parse(produtosCarrinhoJson);
       const unique = produtosCarrinho.map((x: any) => x).filter((value: any, index: any, self: string | any[]) => self.indexOf(value) === index)
 
       return unique.length;
     }
-    return 0;
+    return 0;*/
   }
   public removerProduto(produto: Produto) {
-    let produtosCarrinhoJson = localStorage.getItem('carrinho');
+    /*let produtosCarrinhoJson = localStorage.getItem('carrinho');
     if (produtosCarrinhoJson) {
       let produtosCarrinho = <number[]>JSON.parse(produtosCarrinhoJson);
       produtosCarrinho = produtosCarrinho.filter(x => x != produto.id)
@@ -71,7 +73,7 @@ export class CartService {
       produtosCarrinhoJson = JSON.stringify(produtosCarrinho);
 
       localStorage.setItem('carrinho', produtosCarrinhoJson!);
-    }
-  }
+   }*/
 
+  }
 }

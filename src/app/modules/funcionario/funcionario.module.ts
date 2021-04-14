@@ -27,8 +27,8 @@ import { ModalAlterarSenhaComponent } from './editar-funcionario/modals/modal-al
 
 const routes: Routes = [
   { path: '', component: FuncionarioComponent },
-  { path: 'editar/:id', component: EditarFuncionarioComponent, canActivate: [AdminGuard] },
-  { path: 'adicionar', component: AdicionarFuncionarioComponent, canActivate: [AdminGuard] },
+  { path: 'editar/:id', component: EditarFuncionarioComponent, /* canActivate: [AdminGuard] */},
+  { path: 'adicionar', component: AdicionarFuncionarioComponent, /*canActivate: [AdminGuard]*/ },
 ];
 @NgModule({
   imports: [

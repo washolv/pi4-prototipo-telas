@@ -87,52 +87,7 @@ export class AdicionarFuncionarioComponent implements OnInit {
   }
 
   public addFuncionario() {
-    if (this.formFuncionario.valid) {
-      this.funcionarioService.emailNaoCadastrado(this.formFuncionario.value.email).subscribe(response => {
-        if (!response) {
-          this.funcionarioService.cpfNaoCadastrado(this.formFuncionario.value.cpf).subscribe(r => {
-            if (!r) {
-              this.endereco.cep = this.formFuncionario.value.cep;
-              this.endereco.cidade = this.formFuncionario.value.localidade;
-              this.endereco.logradouro = this.formFuncionario.value.logradouro;
-              this.endereco.uf = this.formFuncionario.value.uf;
-              this.funcionario.telefone = this.formFuncionario.value.telefone;
-              this.funcionario.cpf = this.formFuncionario.value.cpf;
-              this.funcionario.dataNascimento = this.formFuncionario.value.dataNascimento;
-              this.funcionario.nome = this.formFuncionario.value.nome;
-              this.funcionario.telefone = this.formFuncionario.value.telefone;
-              this.usuario.username = this.formFuncionario.value.email;
-              this.usuario.active = true;
-              this.usuario.password = this.formFuncionario.value.senha;
-              this.funcionario.endereco = this.endereco;
-              this.funcionario.usuario=this.usuario;
-              this.funcionario.cargo = this.formFuncionario.value.cargo;
 
-              this.funcionarioService.postFuncionario(this.funcionario).subscribe(res => {
-                this.toastr.success("Funcionário adicionado com sucesso", "OK", {
-                  timeOut: 3000, positionClass: 'toast-top-center',
-                });
-                this.limparCampos();
-              }, err => {
-                this.toastr.error(err, "Erro", {
-                  timeOut: 3000, positionClass: 'toast-top-center',
-                });
-              })
-            }else{
-              this.toastr.error("CPF já cadastrado", "Erro", {
-                timeOut: 3000, positionClass: 'toast-top-center',
-              });
-            }
-          })
-        } else {
-          this.toastr.error("e-mail já cadastrado", "Erro", {
-            timeOut: 3000, positionClass: 'toast-top-center',
-          });
-        }
-      })
-    } else {
-      this.formValid = false;
-    }
   }
   public backPage() {
     this.router.navigate(['/funcionarios'])

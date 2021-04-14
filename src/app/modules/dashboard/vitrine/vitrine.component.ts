@@ -24,10 +24,10 @@ export class VitrineComponent implements OnInit {
   searchCategoria = new Subject<string>();
   public filtroPesquisa: string = "";
   public currentRate = 1;
-
+  public rate=1;
   constructor(private config: NgbRatingConfig, private router: Router, private sanitizer: DomSanitizer, private produtoService: ProdutoService) {
     this.config.max = 5;
-    this.searchFilter.pipe(
+    /*this.searchFilter.pipe(
       debounceTime(1000),
       distinctUntilChanged())
       .subscribe(search => {
@@ -44,7 +44,7 @@ export class VitrineComponent implements OnInit {
               )
             });
           });
-      });
+      });*/
   }
 
   ngOnInit() {
@@ -52,7 +52,7 @@ export class VitrineComponent implements OnInit {
   }
 
   filtrarPorCategoria(categoria?: string) {
-    if (categoria == "") {
+    /*if (categoria == "") {
       this.produtoService.getProdutosHabilitados().subscribe((response: HttpResponse<Produto[]>) => {
         this.produtos = <Produto[]>response.body,
           this.produtos.forEach(produto => {
@@ -78,11 +78,11 @@ export class VitrineComponent implements OnInit {
             )
           });
       });
-    }
+    }*/
   }
 
   filtrarPorSubCategoria(item: string) {
-    this.produtoService.getProdutoByDescricao(item, true)
+   /* this.produtoService.getProdutoByDescricao(item, true)
       .subscribe((response: Produto[]) => {
         this.produtos = response;
         this.produtos.forEach(produto => {
@@ -94,14 +94,14 @@ export class VitrineComponent implements OnInit {
           }
           )
         });
-      });
+      });*/
   }
 
   Detalhes(id: number) {
     this.loading = true;
     pipe(first())
     {
-      this.router.navigate(['/dashboard/detalhes', id]);
+      this.router.navigate(['/dashboard/detalhes', 1]);
     }
   }
 }
