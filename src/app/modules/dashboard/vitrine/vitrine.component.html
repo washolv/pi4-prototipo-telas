@@ -87,185 +87,196 @@
     </label>
   </div>
   <div class="col-lg-12">
-  <div class="row">
-    <div class="col-lg-3 col-md-6 col-sm-12 mb-3  d-flex justify-content-center">
-      <div class="card h-100" style="width: 21rem;">
-        <img class="card-img-top" src="../../../../assets/13520634_01.webp" alt="Imagem principal do produto">
-        <div class="card-body">
-          <h4 class="card-title text-center custom-name">Sabonete Líquido Karsten 380ml Floral Fresco</h4>
-          <p class="card-text text-center">
-            <ngb-rating [(rate)]="rate" [readonly]=true maxlength=5></ngb-rating>
-          </p>
-          <hr>
-          <p class="card-text custom-price">{{48.70 | currency:'BRL':'symbol':'0.2-2'}}</p>
-          <p class="text-center "><a class="btn btn-primary" (click)="Detalhes(1)">Mais informações</a></p>
+    <div class="row" *ngFor="let produto of produtos |  paginate: {id: 'listing_pagination',
+                                itemsPerPage: 1,
+                                currentPage: this.page,
+                                totalItems: totalRegistros};let i=index">
+      <div class="col-lg-3 col-md-6 col-sm-12 mb-3  d-flex justify-content-center">
+        <div class="card h-100" style="width: 21rem;">
+          <img class="card-img-top" src="../../../../assets/13520634_01.webp" alt="Imagem principal do produto">
+          <div class="card-body">
+            <h4 class="card-title text-center custom-name">Sabonete Líquido Karsten 380ml Floral Fresco</h4>
+            <p class="card-text text-center">
+              <ngb-rating [(rate)]="rate" [readonly]=true maxlength=5></ngb-rating>
+            </p>
+            <hr>
+            <p class="card-text custom-price">{{48.70 | currency:'BRL':'symbol':'0.2-2'}}</p>
+            <p class="text-center "><a class="btn btn-primary" (click)="Detalhes(1)">Mais informações</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12 mb-3  d-flex justify-content-center">
+        <div class="card h-100" style="width: 21rem;">
+          <img class="card-img-top" src="../../../../assets/133480624_01.webp" alt="Imagem principal do produto">
+          <div class="card-body">
+            <h4 class="card-title text-center custom-name">Jogo de Cama Solteiro Infantil Karsten 180 Fios Percal 100%
+              Algodão Missi</h4>
+            <p class="card-text text-center">
+              <ngb-rating [(rate)]="rate" [readonly]=true maxlength=5></ngb-rating>
+            </p>
+            <hr>
+            <p class="card-text custom-price">{{214.90 | currency:'BRL':'symbol':'0.2-2'}}</p>
+            <p class="text-center "><a class="btn btn-primary" (click)="Detalhes(1)">Mais informações</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12 mb-3  d-flex justify-content-center">
+        <div class="card h-100" style="width: 21rem;">
+          <img class="card-img-top" src="../../../../assets/3506372_01.webp" alt="Imagem principal do produto">
+          <div class="card-body">
+            <h4 class="card-title text-center custom-name">Toalha de Banho Karsten Antimicrobiana Fio Penteado Hera Bege
+              Bone</h4>
+            <p class="card-text text-center">
+              <ngb-rating [(rate)]="rate" [readonly]=true maxlength=5></ngb-rating>
+            </p>
+            <hr>
+            <p class="card-text custom-price">{{32.50 | currency:'BRL':'symbol':'0.2-2'}}</p>
+            <p class="text-center "><a class="btn btn-primary" (click)="Detalhes(1)">Mais informações</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12 mb-3  d-flex justify-content-center">
+        <div class="card h-100" style="width: 21rem;">
+          <img class="card-img-top" src="../../../../assets/13520634_01.webp" alt="Imagem principal do produto">
+          <div class="card-body">
+            <h4 class="card-title text-center custom-name">Sabonete Líquido Karsten 380ml Floral Fresco</h4>
+            <p class="card-text text-center">
+              <ngb-rating [(rate)]="rate" [readonly]=true maxlength=5></ngb-rating>
+            </p>
+            <hr>
+            <p class="card-text custom-price">{{48.70 | currency:'BRL':'symbol':'0.2-2'}}</p>
+            <p class="text-center "><a class="btn btn-primary" (click)="Detalhes(1)">Mais informações</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12 mb-3  d-flex justify-content-center">
+        <div class="card h-100" style="width: 21rem;">
+          <img class="card-img-top" src="../../../../assets/133480624_01.webp" alt="Imagem principal do produto">
+          <div class="card-body">
+            <h4 class="card-title text-center custom-name">Jogo de Cama Solteiro Infantil Karsten 180 Fios Percal 100%
+              Algodão Missi</h4>
+            <p class="card-text text-center">
+              <ngb-rating [(rate)]="rate" [readonly]=true maxlength=5></ngb-rating>
+            </p>
+            <hr>
+            <p class="card-text custom-price">{{214.90 | currency:'BRL':'symbol':'0.2-2'}}</p>
+            <p class="text-center "><a class="btn btn-primary" (click)="Detalhes(1)">Mais informações</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12 mb-3  d-flex justify-content-center">
+        <div class="card h-100" style="width: 21rem;">
+          <img class="card-img-top" src="../../../../assets/3506372_01.webp" alt="Imagem principal do produto">
+          <div class="card-body">
+            <h4 class="card-title text-center custom-name">Toalha de Banho Karsten Antimicrobiana Fio Penteado Hera Bege
+              Bone</h4>
+            <p class="card-text text-center">
+              <ngb-rating [(rate)]="rate" [readonly]=true maxlength=5></ngb-rating>
+            </p>
+            <hr>
+            <p class="card-text custom-price">{{32.50 | currency:'BRL':'symbol':'0.2-2'}}</p>
+            <p class="text-center "><a class="btn btn-primary" (click)="Detalhes(1)">Mais informações</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12 mb-3  d-flex justify-content-center">
+        <div class="card h-100" style="width: 21rem;">
+          <img class="card-img-top" src="../../../../assets/13520634_01.webp" alt="Imagem principal do produto">
+          <div class="card-body">
+            <h4 class="card-title text-center custom-name">Sabonete Líquido Karsten 380ml Floral Fresco</h4>
+            <p class="card-text text-center">
+              <ngb-rating [(rate)]="rate" [readonly]=true maxlength=5></ngb-rating>
+            </p>
+            <hr>
+            <p class="card-text custom-price">{{48.70 | currency:'BRL':'symbol':'0.2-2'}}</p>
+            <p class="text-center "><a class="btn btn-primary" (click)="Detalhes(1)">Mais informações</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12 mb-3  d-flex justify-content-center">
+        <div class="card h-100" style="width: 21rem;">
+          <img class="card-img-top" src="../../../../assets/133480624_01.webp" alt="Imagem principal do produto">
+          <div class="card-body">
+            <h4 class="card-title text-center custom-name">Jogo de Cama Solteiro Infantil Karsten 180 Fios Percal 100%
+              Algodão Missi</h4>
+            <p class="card-text text-center">
+              <ngb-rating [(rate)]="rate" [readonly]=true maxlength=5></ngb-rating>
+            </p>
+            <hr>
+            <p class="card-text custom-price">{{214.90 | currency:'BRL':'symbol':'0.2-2'}}</p>
+            <p class="text-center "><a class="btn btn-primary" (click)="Detalhes(1)">Mais informações</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12 mb-3  d-flex justify-content-center">
+        <div class="card h-100" style="width: 21rem;">
+          <img class="card-img-top" src="../../../../assets/3506372_01.webp" alt="Imagem principal do produto">
+          <div class="card-body">
+            <h4 class="card-title text-center custom-name">Toalha de Banho Karsten Antimicrobiana Fio Penteado Hera Bege
+              Bone</h4>
+            <p class="card-text text-center">
+              <ngb-rating [(rate)]="rate" [readonly]=true maxlength=5></ngb-rating>
+            </p>
+            <hr>
+            <p class="card-text custom-price">{{32.50 | currency:'BRL':'symbol':'0.2-2'}}</p>
+            <p class="text-center "><a class="btn btn-primary" (click)="Detalhes(1)">Mais informações</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12 mb-3  d-flex justify-content-center">
+        <div class="card h-100" style="width: 21rem;">
+          <img class="card-img-top" src="../../../../assets/13520634_01.webp" alt="Imagem principal do produto">
+          <div class="card-body">
+            <h4 class="card-title text-center custom-name">Sabonete Líquido Karsten 380ml Floral Fresco</h4>
+            <p class="card-text text-center">
+              <ngb-rating [(rate)]="rate" [readonly]=true maxlength=5></ngb-rating>
+            </p>
+            <hr>
+            <p class="card-text custom-price">{{48.70 | currency:'BRL':'symbol':'0.2-2'}}</p>
+            <p class="text-center "><a class="btn btn-primary" (click)="Detalhes(1)">Mais informações</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12 mb-3  d-flex justify-content-center">
+        <div class="card h-100" style="width: 21rem;">
+          <img class="card-img-top" src="../../../../assets/133480624_01.webp" alt="Imagem principal do produto">
+          <div class="card-body">
+            <h4 class="card-title text-center custom-name">Jogo de Cama Solteiro Infantil Karsten 180 Fios Percal 100%
+              Algodão Missi</h4>
+            <p class="card-text text-center">
+              <ngb-rating [(rate)]="rate" [readonly]=true maxlength=5></ngb-rating>
+            </p>
+            <hr>
+            <p class="card-text custom-price">{{214.90 | currency:'BRL':'symbol':'0.2-2'}}</p>
+            <p class="text-center "><a class="btn btn-primary" (click)="Detalhes(1)">Mais informações</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12 mb-3  d-flex justify-content-center">
+        <div class="card h-100" style="width: 21rem;">
+          <img class="card-img-top" src="../../../../assets/3506372_01.webp" alt="Imagem principal do produto">
+          <div class="card-body">
+            <h4 class="card-title text-center custom-name">Toalha de Banho Karsten Antimicrobiana Fio Penteado Hera Bege
+              Bone</h4>
+            <p class="card-text text-center">
+              <ngb-rating [(rate)]="rate" [readonly]=true maxlength=5></ngb-rating>
+            </p>
+            <hr>
+            <p class="card-text custom-price">{{32.50 | currency:'BRL':'symbol':'0.2-2'}}</p>
+            <p class="text-center "><a class="btn btn-primary" (click)="Detalhes(1)">Mais informações</a></p>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-lg-3 col-md-6 col-sm-12 mb-3  d-flex justify-content-center">
-      <div class="card h-100" style="width: 21rem;">
-        <img class="card-img-top" src="../../../../assets/133480624_01.webp" alt="Imagem principal do produto">
-        <div class="card-body">
-          <h4 class="card-title text-center custom-name">Jogo de Cama Solteiro Infantil Karsten 180 Fios Percal 100%
-            Algodão Missi</h4>
-          <p class="card-text text-center">
-            <ngb-rating [(rate)]="rate" [readonly]=true maxlength=5></ngb-rating>
-          </p>
-          <hr>
-          <p class="card-text custom-price">{{214.90 | currency:'BRL':'symbol':'0.2-2'}}</p>
-          <p class="text-center "><a class="btn btn-primary" (click)="Detalhes(1)">Mais informações</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-12 mb-3  d-flex justify-content-center">
-      <div class="card h-100" style="width: 21rem;">
-        <img class="card-img-top" src="../../../../assets/3506372_01.webp" alt="Imagem principal do produto">
-        <div class="card-body">
-          <h4 class="card-title text-center custom-name">Toalha de Banho Karsten Antimicrobiana Fio Penteado Hera Bege
-            Bone</h4>
-          <p class="card-text text-center">
-            <ngb-rating [(rate)]="rate" [readonly]=true maxlength=5></ngb-rating>
-          </p>
-          <hr>
-          <p class="card-text custom-price">{{32.50 | currency:'BRL':'symbol':'0.2-2'}}</p>
-          <p class="text-center "><a class="btn btn-primary" (click)="Detalhes(1)">Mais informações</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-12 mb-3  d-flex justify-content-center">
-      <div class="card h-100" style="width: 21rem;">
-        <img class="card-img-top" src="../../../../assets/13520634_01.webp" alt="Imagem principal do produto">
-        <div class="card-body">
-          <h4 class="card-title text-center custom-name">Sabonete Líquido Karsten 380ml Floral Fresco</h4>
-          <p class="card-text text-center">
-            <ngb-rating [(rate)]="rate" [readonly]=true maxlength=5></ngb-rating>
-          </p>
-          <hr>
-          <p class="card-text custom-price">{{48.70 | currency:'BRL':'symbol':'0.2-2'}}</p>
-          <p class="text-center "><a class="btn btn-primary" (click)="Detalhes(1)">Mais informações</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-12 mb-3  d-flex justify-content-center">
-      <div class="card h-100" style="width: 21rem;">
-        <img class="card-img-top" src="../../../../assets/133480624_01.webp" alt="Imagem principal do produto">
-        <div class="card-body">
-          <h4 class="card-title text-center custom-name">Jogo de Cama Solteiro Infantil Karsten 180 Fios Percal 100%
-            Algodão Missi</h4>
-          <p class="card-text text-center">
-            <ngb-rating [(rate)]="rate" [readonly]=true maxlength=5></ngb-rating>
-          </p>
-          <hr>
-          <p class="card-text custom-price">{{214.90 | currency:'BRL':'symbol':'0.2-2'}}</p>
-          <p class="text-center "><a class="btn btn-primary" (click)="Detalhes(1)">Mais informações</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-12 mb-3  d-flex justify-content-center">
-      <div class="card h-100" style="width: 21rem;">
-        <img class="card-img-top" src="../../../../assets/3506372_01.webp" alt="Imagem principal do produto">
-        <div class="card-body">
-          <h4 class="card-title text-center custom-name">Toalha de Banho Karsten Antimicrobiana Fio Penteado Hera Bege
-            Bone</h4>
-          <p class="card-text text-center">
-            <ngb-rating [(rate)]="rate" [readonly]=true maxlength=5></ngb-rating>
-          </p>
-          <hr>
-          <p class="card-text custom-price">{{32.50 | currency:'BRL':'symbol':'0.2-2'}}</p>
-          <p class="text-center "><a class="btn btn-primary" (click)="Detalhes(1)">Mais informações</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-12 mb-3  d-flex justify-content-center">
-      <div class="card h-100" style="width: 21rem;">
-        <img class="card-img-top" src="../../../../assets/13520634_01.webp" alt="Imagem principal do produto">
-        <div class="card-body">
-          <h4 class="card-title text-center custom-name">Sabonete Líquido Karsten 380ml Floral Fresco</h4>
-          <p class="card-text text-center">
-            <ngb-rating [(rate)]="rate" [readonly]=true maxlength=5></ngb-rating>
-          </p>
-          <hr>
-          <p class="card-text custom-price">{{48.70 | currency:'BRL':'symbol':'0.2-2'}}</p>
-          <p class="text-center "><a class="btn btn-primary" (click)="Detalhes(1)">Mais informações</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-12 mb-3  d-flex justify-content-center">
-      <div class="card h-100" style="width: 21rem;">
-        <img class="card-img-top" src="../../../../assets/133480624_01.webp" alt="Imagem principal do produto">
-        <div class="card-body">
-          <h4 class="card-title text-center custom-name">Jogo de Cama Solteiro Infantil Karsten 180 Fios Percal 100%
-            Algodão Missi</h4>
-          <p class="card-text text-center">
-            <ngb-rating [(rate)]="rate" [readonly]=true maxlength=5></ngb-rating>
-          </p>
-          <hr>
-          <p class="card-text custom-price">{{214.90 | currency:'BRL':'symbol':'0.2-2'}}</p>
-          <p class="text-center "><a class="btn btn-primary" (click)="Detalhes(1)">Mais informações</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-12 mb-3  d-flex justify-content-center">
-      <div class="card h-100" style="width: 21rem;">
-        <img class="card-img-top" src="../../../../assets/3506372_01.webp" alt="Imagem principal do produto">
-        <div class="card-body">
-          <h4 class="card-title text-center custom-name">Toalha de Banho Karsten Antimicrobiana Fio Penteado Hera Bege
-            Bone</h4>
-          <p class="card-text text-center">
-            <ngb-rating [(rate)]="rate" [readonly]=true maxlength=5></ngb-rating>
-          </p>
-          <hr>
-          <p class="card-text custom-price">{{32.50 | currency:'BRL':'symbol':'0.2-2'}}</p>
-          <p class="text-center "><a class="btn btn-primary" (click)="Detalhes(1)">Mais informações</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-12 mb-3  d-flex justify-content-center">
-      <div class="card h-100" style="width: 21rem;">
-        <img class="card-img-top" src="../../../../assets/13520634_01.webp" alt="Imagem principal do produto">
-        <div class="card-body">
-          <h4 class="card-title text-center custom-name">Sabonete Líquido Karsten 380ml Floral Fresco</h4>
-          <p class="card-text text-center">
-            <ngb-rating [(rate)]="rate" [readonly]=true maxlength=5></ngb-rating>
-          </p>
-          <hr>
-          <p class="card-text custom-price">{{48.70 | currency:'BRL':'symbol':'0.2-2'}}</p>
-          <p class="text-center "><a class="btn btn-primary" (click)="Detalhes(1)">Mais informações</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-12 mb-3  d-flex justify-content-center">
-      <div class="card h-100" style="width: 21rem;">
-        <img class="card-img-top" src="../../../../assets/133480624_01.webp" alt="Imagem principal do produto">
-        <div class="card-body">
-          <h4 class="card-title text-center custom-name">Jogo de Cama Solteiro Infantil Karsten 180 Fios Percal 100%
-            Algodão Missi</h4>
-          <p class="card-text text-center">
-            <ngb-rating [(rate)]="rate" [readonly]=true maxlength=5></ngb-rating>
-          </p>
-          <hr>
-          <p class="card-text custom-price">{{214.90 | currency:'BRL':'symbol':'0.2-2'}}</p>
-          <p class="text-center "><a class="btn btn-primary" (click)="Detalhes(1)">Mais informações</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-12 mb-3  d-flex justify-content-center">
-      <div class="card h-100" style="width: 21rem;">
-        <img class="card-img-top" src="../../../../assets/3506372_01.webp" alt="Imagem principal do produto">
-        <div class="card-body">
-          <h4 class="card-title text-center custom-name">Toalha de Banho Karsten Antimicrobiana Fio Penteado Hera Bege
-            Bone</h4>
-          <p class="card-text text-center">
-            <ngb-rating [(rate)]="rate" [readonly]=true maxlength=5></ngb-rating>
-          </p>
-          <hr>
-          <p class="card-text custom-price">{{32.50 | currency:'BRL':'symbol':'0.2-2'}}</p>
-          <p class="text-center "><a class="btn btn-primary" (click)="Detalhes(1)">Mais informações</a></p>
-        </div>
+    <div class="row custom-pagination">
+      <div class="col-lg-8 "></div>
+      <div class="custom-table-container">
+        <pagination-controls id="listing_pagination" maxlength='5' previousLabel="Anterior" nextLabel="próximo"
+          (pageChange)="page = $event">
+        </pagination-controls>
       </div>
     </div>
   </div>
-</div>
   <div class="loading-spinner" *ngIf="loading">
     <mat-spinner></mat-spinner>
   </div>

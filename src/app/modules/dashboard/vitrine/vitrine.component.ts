@@ -16,7 +16,7 @@ import { Produto } from '../../produto/models/Produto';
 
 export class VitrineComponent implements OnInit {
 
-  public produtos: Produto[] = [];
+  public produtos: string[] = []
   imageToShow: SafeResourceUrl[] = [];
   imagens: any;
   public loading = false;
@@ -24,9 +24,18 @@ export class VitrineComponent implements OnInit {
   searchCategoria = new Subject<string>();
   public filtroPesquisa: string = "";
   public currentRate = 1;
-  public rate=1;
+  public rate = 1;
+
+  totalRegistros: number = 0;
+  page: number = 1
+
   constructor(private config: NgbRatingConfig, private router: Router, private sanitizer: DomSanitizer, private produtoService: ProdutoService) {
     this.config.max = 5;
+    let linha1: string = "linha"
+
+    this.produtos.push(linha1);
+    this.produtos.push(linha1);
+
     /*this.searchFilter.pipe(
       debounceTime(1000),
       distinctUntilChanged())
@@ -82,19 +91,19 @@ export class VitrineComponent implements OnInit {
   }
 
   filtrarPorSubCategoria(item: string) {
-   /* this.produtoService.getProdutoByDescricao(item, true)
-      .subscribe((response: Produto[]) => {
-        this.produtos = response;
-        this.produtos.forEach(produto => {
-          produto.imageToShow = [];
-          this.produtoService.getImagensProduto(produto.id!).subscribe(response => {
-            response.forEach(element =>
-              produto.imageToShow.push((this.sanitizer.bypassSecurityTrustResourceUrl(`data:image/png;base64, ${element.imagem}`)))
-            )
-          }
-          )
-        });
-      });*/
+    /* this.produtoService.getProdutoByDescricao(item, true)
+       .subscribe((response: Produto[]) => {
+         this.produtos = response;
+         this.produtos.forEach(produto => {
+           produto.imageToShow = [];
+           this.produtoService.getImagensProduto(produto.id!).subscribe(response => {
+             response.forEach(element =>
+               produto.imageToShow.push((this.sanitizer.bypassSecurityTrustResourceUrl(`data:image/png;base64, ${element.imagem}`)))
+             )
+           }
+           )
+         });
+       });*/
   }
 
   Detalhes(id: number) {
