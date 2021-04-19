@@ -21,11 +21,11 @@ export class CheckoutComponent implements OnInit {
     //this.produtosCarrinho=this.cartService.buscarProdutos();
   }
   remover(produto: Produto){
-      this.cartService.removerProduto(produto);
-      window.location.reload();
+     // this.cartService.removerProduto(produto);
+     // window.location.reload();
   }
 
   endereco(){
-    this.router.navigate(['/carrinho/endereco-entrega']);
+    //this.router.navigate(['/carrinho/endereco-entrega']);
   }
 }
