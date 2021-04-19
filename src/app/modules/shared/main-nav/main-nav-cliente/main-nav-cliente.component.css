@@ -32,6 +32,17 @@
   size: 5px;
   margin-top: -5px;
 }
+.header__section-bag__btn-bag{
+  margin: auto;
+  margin-right: 30px;
+  position: relative;
+  display: block;
+  width: 46px;
+  height: 32px;
+  font-size: 0;
+  background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzciIGhlaWdodD0iMzIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTM3IDExLjQyOWgtNi4yODNMMjQuMTE3LjU1NUExLjE2NCAxLjE2NCAwIDAwMjIuNTMuMTYzYTEuMTM1IDEuMTM1IDAgMDAtLjM5NiAxLjU2OGw1Ljg4NiA5LjY5OEg4Ljk4bDUuODg2LTkuNjk4QTEuMTM1IDEuMTM1IDAgMDAxNC40Ny4xNjNhMS4xNjQgMS4xNjQgMCAwMC0xLjU4Ni4zOTJMNi4yODMgMTEuNDI4SDB2Mi4yODZoMi41MWwyLjkzNyAxNS40ODhDNS43NTQgMzAuODI0IDcuMTg4IDMyIDguODU3IDMyaDE5LjI4NmMxLjY2OSAwIDMuMTAzLTEuMTc2IDMuNDA5LTIuNzk3bDIuOTM4LTE1LjQ4OUgzN1YxMS40M3ptLTcuNzIxIDE3LjM1M2MtLjEwMi41NC0uNTguOTMyLTEuMTM2LjkzMkg4Ljg1N2ExLjE1MyAxLjE1MyAwIDAxLTEuMTM3LS45MzNMNC44NjIgMTMuNzE0aDI3LjI3NmwtMi44NiAxNS4wNjh6IiBmaWxsPSIjODc4Nzg3Ii8+PC9zdmc+) 0 no-repeat;
+  background-size: 37px 32px;
+}
 @media screen and (max-width:768px) {
   .img-fluid{
     display: none;
@@ -40,6 +51,11 @@
     position: relative;
     width: 30%;
   }
+  .header__section-bag__btn-bag{
+    margin: 0;
+    margin-top: 11px;
+  }
+
 }
 
 .nav-link{
@@ -77,13 +93,4 @@
     background-color: red;
     border-radius: 50%;
 }
-.header__section-bag__btn-bag{
-  margin-top: 11px;
-  position: relative;
-  display: block;
-  width: 46px;
-  height: 32px;
-  font-size: 0;
-  background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzciIGhlaWdodD0iMzIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTM3IDExLjQyOWgtNi4yODNMMjQuMTE3LjU1NUExLjE2NCAxLjE2NCAwIDAwMjIuNTMuMTYzYTEuMTM1IDEuMTM1IDAgMDAtLjM5NiAxLjU2OGw1Ljg4NiA5LjY5OEg4Ljk4bDUuODg2LTkuNjk4QTEuMTM1IDEuMTM1IDAgMDAxNC40Ny4xNjNhMS4xNjQgMS4xNjQgMCAwMC0xLjU4Ni4zOTJMNi4yODMgMTEuNDI4SDB2Mi4yODZoMi41MWwyLjkzNyAxNS40ODhDNS43NTQgMzAuODI0IDcuMTg4IDMyIDguODU3IDMyaDE5LjI4NmMxLjY2OSAwIDMuMTAzLTEuMTc2IDMuNDA5LTIuNzk3bDIuOTM4LTE1LjQ4OUgzN1YxMS40M3ptLTcuNzIxIDE3LjM1M2MtLjEwMi41NC0uNTguOTMyLTEuMTM2LjkzMkg4Ljg1N2ExLjE1MyAxLjE1MyAwIDAxLTEuMTM3LS45MzNMNC44NjIgMTMuNzE0aDI3LjI3NmwtMi44NiAxNS4wNjh6IiBmaWxsPSIjODc4Nzg3Ii8+PC9zdmc+) 0 no-repeat;
-  background-size: 37px 32px;
-}
+
