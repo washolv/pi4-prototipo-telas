@@ -7,7 +7,6 @@ import { NgbModule, NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
-import { DashboardFuncionarioComponent } from './dashboard-funcionario/dashboard-funcionario.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { VitrineComponent } from './vitrine/vitrine.component';
 import { DetalhesProdutoComponent } from './detalhes-produto/detalhes-produto.component';
@@ -52,7 +51,7 @@ registerLocaleData(localePt, 'pt');
       useValue: "pt"
     }
   ],
-  declarations: [DashboardComponent, VitrineComponent, DashboardFuncionarioComponent, DetalhesProdutoComponent],
+  declarations: [DashboardComponent, VitrineComponent, DetalhesProdutoComponent],
   exports: [
     DashboardComponent,
     VitrineComponent

@@ -5,7 +5,6 @@ import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Rout
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 import { pipe, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, first } from 'rxjs/operators';
-import { ProdutoService } from 'src/app/services/produto.service';
 import { Produto } from '../../produto/models/Produto';
 
 @Component({
@@ -29,7 +28,7 @@ export class VitrineComponent implements OnInit {
   totalRegistros: number = 0;
   page: number = 1
 
-  constructor(private config: NgbRatingConfig, private router: Router, private sanitizer: DomSanitizer, private produtoService: ProdutoService) {
+  constructor(private config: NgbRatingConfig, private router: Router, private sanitizer: DomSanitizer) {
     this.config.max = 5;
     let linha1: string = "linha"
 

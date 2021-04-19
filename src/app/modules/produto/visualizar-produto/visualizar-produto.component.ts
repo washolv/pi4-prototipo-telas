@@ -3,7 +3,6 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
-import { ProdutoService } from 'src/app/services/produto.service';
 import { Produto } from '../models/Produto';
 
 @Component({
@@ -20,26 +19,9 @@ export class VisualizarProdutoComponent implements OnInit {
   public currentRate: number=0;
   imagens: any;
   cont: number = 0;
-  constructor(private config: NgbRatingConfig, private sanitizer: DomSanitizer, private router: Router, private route: ActivatedRoute, private fb: FormBuilder,
-    private produtoService: ProdutoService) {
+  constructor(private config: NgbRatingConfig, private sanitizer: DomSanitizer, private router: Router, private route: ActivatedRoute, private fb: FormBuilder,) {
     this.config.max = 5;
-    this.formProduto = this.createForm(this.produto);
-    this.route.params.subscribe(parametros => {
-      this.id = parametros['id'];
-    });
-    this.produtoService.getProdutoById(this.id).subscribe(response => {
-      this.produto = response
-      this.formProduto = this.createForm(this.produto);
-      this.currentRate=<number> this.produto.qtdEstrelas;
-    })
-
-    this.produtoService.getImagensProduto(this.id).subscribe(response => {
-      this.imagens = response;
-      response.forEach(element =>
-        this.imageToShow.push((this.sanitizer.bypassSecurityTrustResourceUrl(`data:image/png;base64, ${element.imagem}`)))
-      )
-    })
-
+      this.formProduto=this.createForm(new Produto);
   }
 
   ngOnInit() {

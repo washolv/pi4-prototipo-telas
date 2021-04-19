@@ -1,9 +1,2 @@
-<ng-container *ngIf="userRole">
-  <ng-container *ngIf="userRole!='ROLE_CLIENTE'">
-    <app-main-nav-funcionario></app-main-nav-funcionario>
-  </ng-container>
-</ng-container>
-<ng-container *ngIf="!userRole || userRole=='ROLE_CLIENTE'">
-  <app-main-nav-cliente></app-main-nav-cliente>
-</ng-container>
+<app-main-nav-cliente></app-main-nav-cliente>
 <router-outlet></router-outlet>

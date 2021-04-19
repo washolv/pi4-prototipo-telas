@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ModalAlertaComponent } from './modal-alerta/modal-alerta.component';
 import { CardsModule } from 'angular-bootstrap-md'
 import { AccordionModule, AnimatedCardsModule, AutoCompleterModule, AutoFormatModule, CharCounterModule, ChartSimpleModule, ChipsModule, DatepickerModule, FileInputModule, IconsModule, LightBoxModule, MDBBootstrapModulePro, MDBBootstrapModulesPro, PreloadersModule, RangeModule, ScrollSpyModule, SelectModule, SidenavModule, SmoothscrollModule, StepperModule, StickyContentModule, TabsModule, TimePickerModule, ToastModule } from 'ng-uikit-pro-standard'
+import { MainNavClienteComponent } from './main-nav/main-nav-cliente/main-nav-cliente.component';
 
 @NgModule({
   imports: [

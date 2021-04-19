@@ -15,14 +15,12 @@ import { AdicionarImagensProdutoComponent } from './adicionar-produto/adicionar-
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { EditarImagensProdutoComponent } from './editar-produto/editar-imagens-produto/editar-imagens-produto.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { AuthGuard } from 'src/app/services/auth.guard';
 import { NgbModule, NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { AdminGuard } from 'src/app/services/admin.guard';
 import localePt from '@angular/common/locales/pt';
 
 

@@ -1,6 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ProdutoService } from 'src/app/services/produto.service';
 import { Produto } from '../../models/Produto';
 
 @Component({
@@ -11,7 +10,7 @@ import { Produto } from '../../models/Produto';
 export class ModalExcluirProdutoComponent implements OnInit {
   public prod: Produto = new Produto;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private produtoService: ProdutoService, public dialogRef: MatDialogRef<ModalExcluirProdutoComponent>) {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, public dialogRef: MatDialogRef<ModalExcluirProdutoComponent>) {
     this.prod = data.prod;
   }
 
@@ -19,15 +18,6 @@ export class ModalExcluirProdutoComponent implements OnInit {
   }
 
   public Excluir() {
-    this.produtoService.deleteProduto(this.prod.id!).subscribe((response: any) => {
-      if (response) {
-        window.location.reload();
-      }
-    });
-    window.location.reload();
-  }
-  public Close(){
-    this.dialogRef.close();
-  }
 
+  }
 }

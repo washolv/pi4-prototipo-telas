@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ClienteService } from 'src/app/services/cliente.service';
-import { RoleGuardService } from 'src/app/services/RoleGuard.service';
 import { EnderecoCliente } from '../../cliente/models/Cliente';
 
 @Component({
@@ -11,14 +9,9 @@ import { EnderecoCliente } from '../../cliente/models/Cliente';
 export class EnderecoEntregaComponent implements OnInit {
   public id: number=0;
   public enderecos: EnderecoCliente[]=[];
-  constructor(private roleGuardService: RoleGuardService, private clienteService: ClienteService) { }
+  constructor() { }
 
   ngOnInit() {
-    const user=this.roleGuardService.decodeJWT();
-    this.id=user.Id;
-    this.clienteService.buscarEnderecos(this.id).subscribe(resp =>{
-      this.enderecos=resp;
-    })
   }
 
 }

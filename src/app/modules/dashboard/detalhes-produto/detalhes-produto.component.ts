@@ -5,7 +5,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 import { timeoutWith } from 'rxjs/operators';
 import { CartService } from 'src/app/services/cart.service';
-import { ProdutoService } from 'src/app/services/produto.service';
 import { Produto } from '../../produto/models/Produto';
 
 @Component({
@@ -23,7 +22,7 @@ export class DetalhesProdutoComponent implements OnInit {
   imagens: any;
   cont: number = 0;
   constructor(private cartService: CartService, private config: NgbRatingConfig, private sanitizer: DomSanitizer, private router: Router, private route: ActivatedRoute, private fb: FormBuilder,
-    private produtoService: ProdutoService) {
+    ) {
     this.config.max = 5;
     this.route.params.subscribe(parametros => {
       this.id = parametros['id'];

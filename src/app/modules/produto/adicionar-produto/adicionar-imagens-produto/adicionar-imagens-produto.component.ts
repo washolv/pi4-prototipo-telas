@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AlertService } from 'src/app/modules/shared/modal-alerta/alert.service';
-import { ProdutoService } from 'src/app/services/produto.service';
 import { AdicionarImagem, Produto } from '../../models/Produto';
 
 @Component({
@@ -21,7 +20,7 @@ export class AdicionarImagensProdutoComponent implements OnInit {
 
   id: number = 0;
   produtoRetorno = new Produto();
-  constructor(private toastr: ToastrService, private modalService: AlertService, private produtoService: ProdutoService, private router: Router) {
+  constructor(private toastr: ToastrService, private modalService: AlertService, private router: Router) {
     this.nav = router.getCurrentNavigation();
     this.produto = this.nav.extras.state.produto;
   }
@@ -49,43 +48,11 @@ export class AdicionarImagensProdutoComponent implements OnInit {
     this.habilitado = index;
   }
   addProduto() {
-    if(this.files.length<1){
-      this.toastr.warning("O Produto deve conter ao menos uma Imagem", "Falha", {
-        timeOut: 2000, positionClass: 'toast-top-center',
-      });
-      return;
-    }
-    if(this.files.length<1){
-      this.toastr.warning("O Produto deve conter ao menos uma Imagem", "Falha", {
-        timeOut: 2000, positionClass: 'toast-top-center',
-      });
-      return;
-    }
-    this.produtoService.postProduto(this.produto).subscribe((response: any) => {
-      if (response) {
-        this.produtoRetorno = response;
-        this.SalveImage(this.produtoRetorno.id!)
-      }
-    }, err => {
-      this.toastr.error("Error ao adicionar produto", "Falha", {
-        timeOut: 3000, positionClass: 'toast-top-center',
-      });
-    });
+
   }
 
   SalveImage(id: number) {
-    let uploadImageData = new FormData();
-    for (const file of this.files) {
-      uploadImageData.append('file', file);
-    }
-    this.produtoService.postFotoProduto(uploadImageData, id, this.habilitado).subscribe((response: any) => {
-      if (response) {
-        this.toastr.success("Produto cadastrado com sucesso", "Ok", {
-          timeOut: 3000, positionClass: 'toast-top-center',
-        });
-        this.router.navigate(['/produtos/adicionar']);
-      }
-    });
+
   }
 
   deleteImage(img: AdicionarImagem, i: number): void {

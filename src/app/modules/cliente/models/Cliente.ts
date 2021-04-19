@@ -1,4 +1,3 @@
-import { Usuario } from "../../funcionario/models/Funcionario";
 
 export class Cliente {
   id?: number;
@@ -9,7 +8,6 @@ export class Cliente {
   sexo?: string;
   dataNascimento?: Date;
   enderecos?: EnderecoCliente[]=[];
-  usuario?: Usuario;
 }
 
 export class EnderecoCliente {

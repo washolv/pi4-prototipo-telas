@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { environment } from 'src/environments/environment';
 import { Imagem, Produto } from '../modules/produto/models/Produto';
-import { ProdutoService } from './produto.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +11,7 @@ export class CartService {
 
   apiUrl = environment.baseAPIUrl;
 
-  constructor(private domSanitizer: DomSanitizer,private http: HttpClient, private produtoService: ProdutoService, private sanitizer: DomSanitizer) { }
+  constructor(private domSanitizer: DomSanitizer,private http: HttpClient, private sanitizer: DomSanitizer) { }
 
   public buscarProdutos() {
     /*let produtosCarrinhoJson = localStorage.getItem('carrinho');

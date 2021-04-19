@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ProdutoService } from 'src/app/services/produto.service';
 import { Produto } from '../models/Produto';
 import { ThemePalette } from '@angular/material/core';
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
